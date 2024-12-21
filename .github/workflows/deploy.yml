@@ -33,7 +33,9 @@ jobs:
         run: npm install
 
       - name: Building project
-        run: npm run build
+        run: |
+          unset CI 
+          npm run build
 
       - name: Install SL agent
         run: npm i slnodejs
