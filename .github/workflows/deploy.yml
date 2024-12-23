@@ -32,6 +32,9 @@ jobs:
       - name: Installing NPM packages
         run: npm install
 
+      - name: Install lucide-react
+        run: npm install lucide-react
+
       - name: Building project
         run: |
           unset CI 
