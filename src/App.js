@@ -315,6 +315,16 @@ function App() {
     setUsername(user);
   };
 
+  const removeFromCart = (index) => {
+    setCartItems(cartItems.filter((_, i) => i !== index));
+  };
+
+  const handleCheckout = () => {
+    alert('Thank you for your purchase!');
+    setCartItems([]);
+    setShowCart(false);
+  };
+  
   const handleLogout = () => {
     setIsLoggedIn(false);
     setUsername('');
@@ -324,16 +334,6 @@ function App() {
 
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
-  };
-
-  const removeFromCart = (index) => {
-    setCartItems(cartItems.filter((_, i) => i !== index));
-  };
-
-  const handleCheckout = () => {
-    alert('Thank you for your purchase!');
-    setCartItems([]);
-    setShowCart(false);
   };
 
   if (!isLoggedIn) {
