@@ -310,15 +310,6 @@ function App() {
   const [cartItems, setCartItems] = useState([]);
   const [showCart, setShowCart] = useState(false);
 
-  const handleLogin = (user) => {
-    setIsLoggedIn(true);
-    setUsername(user);
-  };
-
-  const removeFromCart = (index) => {
-    setCartItems(cartItems.filter((_, i) => i !== index));
-  };
-
   const handleCheckout = () => {
     alert('Thank you for your purchase!');
     setCartItems([]);
@@ -332,6 +323,15 @@ function App() {
     setShowCart(false);
   };
 
+  const handleLogin = (user) => {
+    setIsLoggedIn(true);
+    setUsername(user);
+  };
+
+  const removeFromCart = (index) => {
+    setCartItems(cartItems.filter((_, i) => i !== index));
+  };
+  
   const addToCart = (product) => {
     setCartItems([...cartItems, product]);
   };
